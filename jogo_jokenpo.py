@@ -2,7 +2,7 @@ from random import randint
 
 
 def escolha():
-    print('''[1] - SIM\n[2] - Não''')
+    print('[1] - SIM\n[2] - Não')
 
     def certeza():
         print('[1] - sim')
