@@ -1,7 +1,9 @@
 from random import randint
+
+
 def escolha():
-    print('''[1] - SIM
-[2] - Não''')
+    print('''[1] - SIM\n[2] - Não''')
+
     def certeza():
         print('[1] - sim')
         print('[2] - não')
@@ -19,9 +21,10 @@ def escolha():
         print('Comando Inválido')
         escolha()
 
+
 def jogar():
     item = ['n', 'Pedra', 'Papel', 'Tesoura']
-    pc = randint(1,3)
+    pc = randint(1, 3)
     print('''Escolha entre
     [1] - Pedra
     [2] - Papel
@@ -31,7 +34,7 @@ def jogar():
     print(f'A máquina escolheu {item[pc]}')
     print(f'Você escolhe {item[player]}')
     print('-=' * 12)
-    if pc == 1: # Máquina escolheu Pedra
+    if pc == 1:  # Máquina escolheu Pedra
         if player == 1:
             print('Empate!')
             print('-' * 12)
@@ -48,7 +51,8 @@ def jogar():
             print('Comando inválido')
             print('-' * 12)
             escolha()
-    elif pc == 2: # Máquina escolheu Papel
+
+    elif pc == 2:  # Máquina escolheu Papel
         if player == 1:
             print('Você perdeu')
             print('-' * 12)
@@ -65,7 +69,8 @@ def jogar():
             print('Comando inválido')
             print('-' * 12)
             escolha()
-    elif pc == 3: # Máquina escolheu Tesoura
+
+    elif pc == 3:  # Máquina escolheu Tesoura
         if player == 1:
             print('Você venceu!')
             print('-' * 12)
@@ -81,5 +86,6 @@ def jogar():
         else:
             print('Comando inválido')
             escolha()
+
 
 escolha()
