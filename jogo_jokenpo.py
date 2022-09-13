@@ -1,5 +1,21 @@
 from random import randint
 
+v = 0
+p = 0
+e = 0
+r = 'teste'
+
+
+def contador():
+    global v, p, e, r
+    if r == 'Você venceu!!!':
+        v += 1
+    elif r == 'Você perdeu!':
+        p += 1
+    elif r == 'Empate!':
+        e += 1
+    print(f'{v}, {p}, {e}')
+
 
 def escolha():
     print('[1] - SIM\n[2] - Não')
@@ -9,7 +25,9 @@ def escolha():
         print('[2] - não')
         c = int(input('Você tem certeza? '))
         if c == 1:
-            print('Tchau!')
+            contador()
+            print(
+                f'Tchau! Você teve:\n{v} vitórias\n{p} derrotas\n{e} Empates\nAté a próxima...')
         elif c == 2:
             escolha()
     opção = int(input('Você quer jogar Pedra, Papel, Tesoura:'))
@@ -25,6 +43,7 @@ def escolha():
 def jogar():
     item = ['n', 'Pedra', 'Papel', 'Tesoura']
     pc = randint(1, 3)
+    global r
     print('''Escolha entre
     [1] - Pedra
     [2] - Papel
@@ -36,16 +55,22 @@ def jogar():
     print('-=' * 12)
     if pc == 1:  # Máquina escolheu Pedra
         if player == 1:
-            print('Empate!')
+            r = 'Empate!'
+            print(f'{r}')
             print('-' * 12)
+            contador()
             escolha()
         elif player == 2:
-            print('Você venceu!')
+            r = 'Você venceu!!!'
+            print(f'{r}')
             print('-' * 12)
+            contador()
             escolha()
         elif player == 3:
-            print('Você perdeu!')
+            r = 'Você perdeu!'
+            print(f'{r}')
             print('-' * 12)
+            contador()
             escolha()
         else:
             print('Comando inválido')
@@ -54,16 +79,22 @@ def jogar():
 
     elif pc == 2:  # Máquina escolheu Papel
         if player == 1:
-            print('Você perdeu')
+            r = 'Você perdeu!'
+            print(f'{r}')
             print('-' * 12)
+            contador()
             escolha()
         elif player == 2:
-            print('Empate')
+            r = 'Empate!'
+            print(f'{r}')
             print('-' * 12)
+            contador()
             escolha()
         elif player == 3:
-            print('Você vence')
+            r = 'Você venceu!!!'
+            print(f'{r}')
             print('-' * 12)
+            contador()
             escolha()
         else:
             print('Comando inválido')
@@ -72,16 +103,21 @@ def jogar():
 
     elif pc == 3:  # Máquina escolheu Tesoura
         if player == 1:
-            print('Você venceu!')
+            r = 'Você venceu!!!'
+            print(f'{r}')
             print('-' * 12)
+            contador()
             escolha()
         elif player == 2:
             print('Você perdeu!')
             print('-' * 12)
+            contador()
             escolha()
         elif player == 3:
-            print('Empate!')
+            r = 'Empate!'
+            print(f'{r}')
             print('-' * 12)
+            contador()
             escolha()
         else:
             print('Comando inválido')
