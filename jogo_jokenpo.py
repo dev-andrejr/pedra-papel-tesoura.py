@@ -14,7 +14,6 @@ def contador():
         p += 1
     elif r == 'Empate!':
         e += 1
-    print(f'{v}, {p}, {e}')
 
 
 def escolha():
