@@ -23,12 +23,33 @@ def escolha():
             print('\n', '-' * 16)
             print(f'Tchau! Você teve:')
             print('-=' * 9)
-            print(f'{vitorias} vitórias\n{perdas} derrotas\n{empates} Empates')
+
+            if vitorias == 0:
+                print('Nenhuma vitória')
+            elif vitorias == 1:
+                print(f'{vitorias} vitória')
+            else:
+                print(f'{vitorias} vitórias')
+
+            if perdas == 0:
+                print('Nenhuma derrota')
+            elif perdas == 1:
+                print(f'{perdas} derrota')
+            else:
+                print(f'{perdas} derrotas')
+
+            if empates == 0:
+                print('Nenhum empate')
+            elif empates == 1:
+                print(f'{empates} Empate')
+            else:
+                print(f'{empates} Empates')
+
             print('-=' * 9)
+            print()
             print('Até a próxima...')
         elif c == 2:
             escolha()
-
     print('Você quer jogar Pedra, Papel, Tesoura:')
     opção = int(input('    [1] - SIM\n    [2] - Não\n'))
     if opção == 1:
