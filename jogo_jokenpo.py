@@ -51,13 +51,17 @@ def escolha():
         elif c == 2:
             escolha()
     print('Você quer jogar Pedra, Papel, Tesoura:')
-    opção = int(input('    [1] - SIM\n    [2] - Não\n'))
-    if opção == 1:
-        jogar()
-    elif opção == 2:
-        certeza()
-    else:
-        print('Comando Inválido')
+    try:
+        opção = int(input('    [1] - SIM\n    [2] - Não\n'))
+        if opção == 1:
+            jogar()
+        elif opção == 2:
+            certeza()
+        else:
+            print('Comando Inválido')
+            escolha()
+    except ValueError:
+        print('\nVocê digitou um valor incorreto!!!')
         escolha()
 
 
